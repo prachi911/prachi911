@@ -1,0 +1,42 @@
+name: Generate GitHub Contribution Snake
+
+on:
+  # run automatically every 12 hours (adjust if you want)
+  schedule:
+    - cron: '0 */12 * * *'
+  # allow manual run from Actions → Run workflow
+  workflow_dispatch:
+
+permissions:
+  contents: write   # allow commits from the workflow
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate contribution snake SVGs (fast SVG-only)
+        uses: Platane/snk/svg-only@v3
+        with:
+          # reads your contributions from the repo owner by default
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            github-contribution-grid-snake.svg
+            github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Commit generated files to 'output' branch
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'chore: update contribution-snake'
+          add: |
+            github-contribution-grid-snake.svg
+            github-contribution-grid-snake-dark.svg
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          new_branch: output
