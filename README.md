@@ -72,10 +72,7 @@ Agile project management platform inspired by Jira with Spring Boot and React.
   <img src="https://img.shields.io/badge/Max%20Streak-7%20Days-2ea44f?style=for-the-badge" alt="Max Streak"/>
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=prachi911&show_icons=true&theme=transparent&hide_border=true" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=prachi911&layout=compact&theme=transparent&hide_border=true" height="165"/>
-</p>
+
 
 ---
 
