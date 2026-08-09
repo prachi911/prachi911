@@ -69,7 +69,7 @@ Agile project management platform inspired by Jira with Spring Boot and React.
 ## GitHub
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Current%20Streak-7%20Days-2ea44f?style=for-the-badge&logo=github" />
+  <img src="https://img.shields.io/badge/Max%20Streak-7%20Days-2ea44f?style=for-the-badge" alt="Max Streak"/>
 </p>
 
 <p align="center">
